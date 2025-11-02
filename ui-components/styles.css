@@ -1,0 +1,86 @@
+:root {
+  --bg: #0b0c10;
+  --panel: #12141a;
+  --text: #e9ebf0;
+  --muted: #9aa3b2;
+  --accent: #6b7bff;
+  --border: #1d2230;
+}
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --panel: #f6f7fb;
+  --text: #13151a;
+  --muted: #5a6578;
+  --accent: #4f5dff;
+  --border: #e5e7ef;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --bg: #ffffff; --panel: #f6f7fb; --text: #13151a;
+    --muted: #5a6578; --accent: #4f5dff; --border: #e5e7ef;
+  }
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  transition: background-color .2s, color .2s;
+}
+
+.topbar {
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+.container { max-width: 960px; margin: 0 auto; padding: 2rem; }
+h2 { margin-top: 2rem; border-bottom: 1px solid var(--border); padding-bottom: .5rem; }
+
+.palette { display: flex; gap: 1rem; flex-wrap: wrap; }
+.swatch { flex: 1 1 120px; height: 80px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--bg); font-weight: 600; }
+.swatch.primary { background: var(--accent); }
+.swatch.bg { background: var(--bg); color: var(--text); border: 1px solid var(--border); }
+.swatch.panel { background: var(--panel); color: var(--text); border: 1px solid var(--border); }
+.swatch.text { background: var(--text); color: var(--bg); }
+
+.btn {
+  padding: .6rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn:hover { opacity: .9; }
+.btn.ghost { background: transparent; color: var(--text); }
+.btn.secondary { background: var(--panel); color: var(--text); }
+.btn.icon::before { content: '★ '; }
+
+.form input, .form textarea {
+  width: 100%;
+  padding: .6rem .8rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: var(--panel);
+  color: var(--text);
+}
+
+.grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+  transition: box-shadow .2s, transform .2s;
+}
+.card:hover { box-shadow: 0 4px 12px rgba(0,0,0,.2); transform: translateY(-3px); }
+.card.highlight { border-color: var(--accent); }
+
+.footer { text-align: center; padding: 2rem 1rem; color: var(--muted); border-top: 1px solid var(--border); }

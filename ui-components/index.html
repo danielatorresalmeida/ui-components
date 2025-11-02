@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daniela UI Components Library</title>
+  <meta name="description" content="Reusable UI components designed by Daniela Torres Almeida." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Daniela UI Components Library</h1>
+    <button id="theme-toggle" class="btn ghost">🌞 Light</button>
+  </header>
+
+  <main class="container">
+    <section id="colors">
+      <h2>🎨 Color Palette</h2>
+      <div class="palette">
+        <div class="swatch primary">--accent</div>
+        <div class="swatch bg">--bg</div>
+        <div class="swatch panel">--panel</div>
+        <div class="swatch text">--text</div>
+      </div>
+    </section>
+
+    <section id="buttons">
+      <h2>🔘 Buttons</h2>
+      <div class="demo">
+        <button class="btn">Primary</button>
+        <button class="btn ghost">Ghost</button>
+        <button class="btn secondary">Secondary</button>
+        <button class="btn icon">⭐ Icon</button>
+      </div>
+    </section>
+
+    <section id="forms">
+      <h2>✏️ Forms</h2>
+      <form class="demo form">
+        <input type="text" placeholder="Name" />
+        <input type="email" placeholder="Email" />
+        <textarea placeholder="Message"></textarea>
+        <button class="btn">Submit</button>
+      </form>
+    </section>
+
+    <section id="cards">
+      <h2>🧩 Cards</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Default Card</h3>
+          <p>This is a reusable card component with text and border styles.</p>
+          <button class="btn ghost">Action</button>
+        </article>
+        <article class="card highlight">
+          <h3>Highlighted Card</h3>
+          <p>Used to draw attention — border uses accent color.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Daniela Torres Almeida</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
