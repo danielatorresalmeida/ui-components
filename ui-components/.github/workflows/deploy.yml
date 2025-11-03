@@ -1,4 +1,4 @@
-name: Deploy Resume to GitHub Pages
+name: Deploy UI Components to GitHub Pages
 
 on:
   push:
@@ -20,12 +20,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
+      # Upload the subfolder that contains index.html
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "."
+          path: "ui-components"   # <— important
 
   deploy:
     environment:
