@@ -11,15 +11,12 @@
 
   <style>
     :root { --sidebar: 340px; }
-
     * { box-sizing: border-box; }
     body {
       margin: 0; height: 100vh; display: grid;
       grid-template-columns: var(--sidebar) 1fr;
       background: #0f1216; color: #e7ecf3; font-family: system-ui, sans-serif;
     }
-
-    /* Left column */
     aside {
       border-right: 1px solid var(--border, #2a3441);
       background: var(--panel, #151a21);
@@ -30,12 +27,9 @@
     .controls { display: grid; gap: 10px; }
     #q {
       width: 100%; padding: 10px 12px; border-radius: 10px;
-      background: #0b0f14; color: #e7ecf3;
-      border: 1px solid var(--border, #2a3441);
+      background: #0b0f14; color: #e7ecf3; border: 1px solid var(--border, #2a3441);
     }
     .hint { color:#9fb0c3; font-size:12px; }
-
-    /* Thumbnails grid */
     .thumbs {
       overflow: auto; padding-right: 4px;
       display: grid; grid-template-columns: repeat(auto-fill, minmax(150px,1fr)); gap: 10px;
@@ -47,7 +41,6 @@
     }
     .card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.35); border-color: #334155; }
     .thumb-wrap { position: relative; height: 110px; background:#0b0f14; }
-    /* live mini preview via scaled iframe */
     .thumb {
       position:absolute; top:0; left:0; width:400px; height:260px; border:0; transform-origin: 0 0; transform: scale(.38);
       pointer-events:none; background:#0b0f14;
@@ -56,8 +49,6 @@
     .name { font-size: 13px; color:#fff; }
     .tags { margin-top: 4px; display:flex; flex-wrap:wrap; gap:6px; }
     .tag { font-size: 10px; color:#9fb0c3; padding: 2px 6px; border:1px solid var(--border,#2a3441); border-radius: 999px; }
-
-    /* Right preview pane */
     main { display:grid; grid-template-rows: auto 1fr; }
     header {
       height: 56px; display:flex; align-items:center; justify-content: space-between;
@@ -107,82 +98,96 @@
   </main>
 
   <script>
-    // Component manifest (name, file, tags)
+    // Base path for GitHub Pages (repo name)
+    const BASE = '/ui-components';
+
+    // Component manifest — make sure filenames match your /components folder
     const COMPONENTS = [
-      {name:'Button', file:'button.html', tags:['controls','resume-site']},
-      {name:'Navbar', file:'navbar.html', tags:['layout','navigation']},
-      {name:'Hero', file:'hero.html', tags:['section','landing']},
-      {name:'Form', file:'form.html', tags:['forms','inputs']},
-      {name:'Contact', file:'contact.html', tags:['forms','section']},
-      {name:'Footer', file:'footer.html', tags:['layout']},
-      {name:'Gallery', file:'gallery.html', tags:['media','grid']},
-      {name:'Grid', file:'grid.html', tags:['layout','utility']},
-      {name:'Icon Set', file:'iconset.html', tags:['icons','assets']},
-      {name:'Modal', file:'modal.html', tags:['overlay','dialog']},
-      {name:'Project Card', file:'project-card.html', tags:['cards','content']},
-      {name:'Resume', file:'resume.html', tags:['section','cv']},
-      {name:'Section', file:'section.html', tags:['content','layout']},
-      {name:'Sidebar', file:'sidebar.html', tags:['layout','navigation']},
-      {name:'Testimonial', file:'testimonial.html', tags:['content','social-proof']},
-      {name:'Timeline', file:'timeline.html', tags:['content','chronology']},
-      {name:'Typography', file:'typography.html', tags:['type','styleguide']},
+      {name:'Button',       file:'components/button.html',       tags:['controls','ui']},
+      {name:'Navbar',       file:'components/navbar.html',       tags:['layout','navigation']},
+      {name:'Hero',         file:'components/hero.html',         tags:['section','landing']},
+      {name:'Form',         file:'components/form.html',         tags:['forms','inputs']},
+      {name:'Contact',      file:'components/contact.html',      tags:['forms','section']},
+      {name:'Footer',       file:'components/footer.html',       tags:['layout']},
+      {name:'Gallery',      file:'components/gallery.html',      tags:['media','grid']},
+      {name:'Grid',         file:'components/grid.html',         tags:['layout','utility']},
+      {name:'Icon Set',     file:'components/iconset.html',      tags:['icons','assets']},
+      {name:'Modal',        file:'components/modal.html',        tags:['overlay','dialog']},
+      {name:'Project Card', file:'components/project-card.html', tags:['cards','content']},
+      {name:'Resume',       file:'components/resume.html',       tags:['section','cv']},
+      {name:'Section',      file:'components/section.html',      tags:['content','layout']},
+      {name:'Sidebar',      file:'components/sidebar.html',      tags:['layout','navigation']},
+      {name:'Testimonial',  file:'components/testimonial.html',  tags:['content','social-proof']},
+      {name:'Timeline',     file:'components/timeline.html',     tags:['content','chronology']},
+      {name:'Typography',   file:'components/typography.html',   tags:['type','styleguide']},
     ];
 
-    const grid = document.getElementById('grid');
-    const preview = document.getElementById('preview');
-    const title = document.getElementById('title');
-    const q = document.getElementById('q');
-    const openDemo = document.getElementById('openDemo');
-    const viewSrc = document.getElementById('viewSrc');
-    const copyBtn = document.getElementById('copyHtml');
+    const $ = (q, el=document) => el.querySelector(q);
+    const grid    = $('#grid');
+    const preview = $('#preview');
+    const title   = $('#title');
+    const q       = $('#q');
+    const openDemo= $('#openDemo');
+    const viewSrc = $('#viewSrc');
+    const copyBtn = $('#copyHtml');
+
+    const abs = (p) => p.startsWith('/') ? p : `${BASE}/${p}`;
 
     function render(list){
       grid.innerHTML = '';
       list.forEach(c => {
         const card = document.createElement('button');
         card.className = 'card';
-        card.setAttribute('type','button');
-        card.dataset.file = c.file;
-        card.dataset.name = c.name;
+        card.type = 'button';
 
         const thumbWrap = document.createElement('div');
         thumbWrap.className = 'thumb-wrap';
+
         const iframe = document.createElement('iframe');
         iframe.className = 'thumb';
         iframe.loading = 'lazy';
-        iframe.src = c.file; // live mini-preview
+        iframe.src = abs(c.file); // live mini-preview
         thumbWrap.appendChild(iframe);
 
         const meta = document.createElement('div');
         meta.className = 'meta';
-        meta.innerHTML = `<div class="name">${c.name}</div>` +
-          `<div class="tags">${c.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>`;
+        meta.innerHTML = `<div class="name">${c.name}</div>
+          <div class="tags">${c.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>`;
 
         card.appendChild(thumbWrap);
         card.appendChild(meta);
-        card.addEventListener('click', ()=>select(c));
+        card.addEventListener('click', () => select(c));
         grid.appendChild(card);
       });
 
-      if (list.length === 0){
-        grid.innerHTML = `<div class="hint">No results. Try a different term.</div>`;
-      }
+      if (!list.length) grid.innerHTML = `<div class="hint">No results. Try a different term.</div>`;
     }
 
     function select(c){
       title.textContent = c.name + ' Component';
-      preview.src = c.file;
-      openDemo.href = c.file;
-      viewSrc.href = c.file; // same path; helpful in GH Pages
+
+      const demoUrl = abs(c.file);
+
+      // right pane preview
+      preview.src = demoUrl;
+
+      // actions
+      openDemo.href = demoUrl;
+      openDemo.target = '_blank';
+      openDemo.rel = 'noopener';
+
+      viewSrc.href = demoUrl;
+
       copyBtn.onclick = async () => {
         try {
-          const res = await fetch(c.file);
+          const res = await fetch(demoUrl, { cache: 'no-store' });
           const html = await res.text();
           await navigator.clipboard.writeText(html.trim());
           copyBtn.textContent = 'Copied!';
-          setTimeout(()=>copyBtn.textContent='Copy HTML', 1200);
+          setTimeout(() => (copyBtn.textContent = 'Copy HTML'), 1200);
         } catch (e) {
-          alert('Copy failed. See console.'); console.error(e);
+          console.error(e);
+          alert('Copy failed.');
         }
       };
     }
