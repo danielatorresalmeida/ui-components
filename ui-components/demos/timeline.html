@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Timeline Component</title>
+
+  <!-- Import your live CSS from both sites -->
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site/assets/styles.css">
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site-only/assets/styles.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      background: #0f1216;
+      color: #e7ecf3;
+      font-family: system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      font-size: 1rem;
+      color: #9fb0c3;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding-left: 1rem;
+      border-left: 2px solid var(--border, #2a3441);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      padding-left: 1.5rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -9px;
+      top: 5px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--accent, #3b82f6);
+      border: 2px solid #0f1216;
+      box-shadow: 0 0 0 2px var(--panel, #151a21);
+    }
+
+    .timeline-item h3 {
+      color: #fff;
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .timeline-item span {
+      display: block;
+      font-size: 0.8rem;
+      color: #9fb0c3;
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: #c4c8d1;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .timeline {
+        padding-left: 0.5rem;
+      }
+
+      .timeline-item {
+        padding-left: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Timeline Component</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>Front-End Developer</h3>
+      <span>Flomad Labs R&D • 2024 – Present</span>
+      <p>Developing AI-driven web interfaces and robotics dashboards that merge creativity with functionality.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Design & Marketing Intern</h3>
+      <span>Flo Labs • 2023 – 2024</span>
+      <p>Worked on design systems, social media visuals, and cross-platform UI components for experimental robotics projects.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Computer Science Student</h3>
+      <span>University of Coimbra • 2020 – 2024</span>
+      <p>Focused on web technologies, UI/UX design, and machine learning integration in real-world software systems.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Freelance Designer</h3>
+      <span>Self-Employed • 2019 – 2022</span>
+      <p>Created digital identities, portfolios, and product designs for small businesses and personal brands.</p>
+    </div>
+  </div>
+
+  <!-- Optional JS -->
+  <script src="https://danielatorresalmeida.github.io/resume-site/assets/main.js"></script>
+</body>
+</html>

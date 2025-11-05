@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sidebar Component</title>
+
+  <!-- Import your live CSS -->
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site/assets/styles.css">
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site-only/assets/styles.css">
+
+  <style>
+    :root {
+      --sidebar-width: 240px;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #0f1216;
+      color: #e7ecf3;
+      display: flex;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Sidebar container */
+    .sidebar {
+      width: var(--sidebar-width);
+      background: var(--panel, #151a21);
+      border-right: 1px solid var(--border, #2a3441);
+      padding: 1.5rem 1rem;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 10;
+    }
+
+    .sidebar.closed {
+      transform: translateX(-100%);
+    }
+
+    .sidebar h2 {
+      font-size: 1rem;
+      margin: 0 0 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #9fb0c3;
+    }
+
+    .nav-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .nav-links a {
+      color: #c4c8d1;
+      text-decoration: none;
+      padding: 0.6rem 0.8rem;
+      border-radius: 8px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: #1c212a;
+      color: var(--accent, #3b82f6);
+    }
+
+    /* Main content */
+    .content {
+      flex: 1;
+      margin-left: var(--sidebar-width);
+      padding: 2rem;
+      transition: margin-left 0.3s ease;
+    }
+
+    .content h1 {
+      font-size: 1.8rem;
+      margin: 0 0 1rem;
+      color: #fff;
+    }
+
+    .content p {
+      color: #9fb0c3;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    /* Toggle button */
+    .toggle-btn {
+      display: none;
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      background: var(--accent, #3b82f6);
+      border: none;
+      color: #fff;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      z-index: 20;
+    }
+
+    .toggle-btn:hover {
+      background: #2563eb;
+    }
+
+    @media (max-width: 768px) {
+      .toggle-btn {
+        display: block;
+      }
+
+      .content {
+        margin-left: 0;
+      }
+
+      .sidebar {
+        position: fixed;
+        height: 100%;
+        transform: translateX(-100%);
+      }
+
+      .sidebar.active {
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <button class="toggle-btn" id="toggleSidebar">Menu</button>
+
+  <aside class="sidebar" id="sidebar">
+    <h2>Dashboard</h2>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Overview</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Analytics</a></li>
+      <li><a href="#">Settings</a></li>
+      <li><a href="#">Profile</a></li>
+    </ul>
+  </aside>
+
+  <main class="content">
+    <h1>Sidebar Layout</h1>
+    <p>
+      This component demonstrates a responsive sidebar layout. On larger screens,
+      the sidebar stays visible. On mobile devices, it collapses behind a toggle button
+      and slides in smoothly when activated.
+    </p>
+    <p>
+      The layout uses your existing color palette, borders, and font styles from your
+      website, ensuring visual consistency across components.
+    </p>
+  </main>
+
+  <!-- Optional JS -->
+  <script src="https://danielatorresalmeida.github.io/resume-site/assets/main.js"></script>
+
+  <script>
+    const toggleBtn = document.getElementById("toggleSidebar");
+    const sidebar = document.getElementById("sidebar");
+
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

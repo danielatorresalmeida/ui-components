@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project Card Component</title>
+
+  <!-- Import live CSS from both sites -->
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site/assets/styles.css">
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site-only/assets/styles.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      background: #0f1216;
+      color: #e7ecf3;
+      font-family: system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      font-size: 1rem;
+      color: #9fb0c3;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    .project-card {
+      background: var(--panel, #151a21);
+      border: 1px solid var(--border, #2a3441);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: opacity 0.3s ease;
+    }
+
+    .project-card:hover img {
+      opacity: 0.9;
+    }
+
+    .project-content {
+      padding: 1.2rem;
+    }
+
+    .project-content h3 {
+      margin: 0 0 0.5rem;
+      color: #fff;
+      font-size: 1.1rem;
+    }
+
+    .project-content p {
+      color: #c4c8d1;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      margin: 0 0 1rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .tag {
+      background: #1b222c;
+      border-radius: 6px;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.75rem;
+      color: #9fb0c3;
+      border: 1px solid var(--border, #2a3441);
+    }
+
+    .btn {
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      background: var(--accent, #3b82f6);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.25s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #2563eb;
+      transform: translateY(-1px);
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: #e7ecf3;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Project Cards</h2>
+
+  <div class="project-grid">
+    <article class="project-card">
+      <img src="https://source.unsplash.com/random/400x300?ai" alt="AI Project">
+      <div class="project-content">
+        <h3>AI Portfolio Analyzer</h3>
+        <p>Evaluates portfolios for readability, design consistency, and engagement using AI-powered analysis.</p>
+        <div class="tags">
+          <span class="tag">AI</span>
+          <span class="tag">UX</span>
+          <span class="tag">JavaScript</span>
+        </div>
+        <div class="actions">
+          <a href="#" class="btn">View Project</a>
+          <a href="#" class="btn ghost">Code</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-card">
+      <img src="https://source.unsplash.com/random/400x300?robot" alt="Robot Project">
+      <div class="project-content">
+        <h3>Robotics Dashboard</h3>
+        <p>Control interface for multi-agent robots with real-time data visualization and task management.</p>
+        <div class="tags">
+          <span class="tag">Robotics</span>
+          <span class="tag">UI</span>
+          <span class="tag">Python</span>
+        </div>
+        <div class="actions">
+          <a href="#" class="btn">Demo</a>
+          <a href="#" class="btn ghost">GitHub</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-card">
+      <img src="https://source.unsplash.com/random/400x300?design" alt="Design System">
+      <div class="project-content">
+        <h3>Design System 2.0</h3>
+        <p>Centralized design system with reusable tokens and Figma–to–code component synchronization.</p>
+        <div class="tags">
+          <span class="tag">Design</span>
+          <span class="tag">Figma</span>
+          <span class="tag">CSS</span>
+        </div>
+        <div class="actions">
+          <a href="#" class="btn">Preview</a>
+          <a href="#" class="btn ghost">Docs</a>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- Optional JS -->
+  <script src="https://danielatorresalmeida.github.io/resume-site/assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hero Section Component</title>
+
+  <!-- Import live CSS from both of your websites -->
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site/assets/styles.css">
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site-only/assets/styles.css">
+
+  <style>
+    body {
+      margin: 0;
+      background: #0f1216;
+      color: #e7ecf3;
+      font-family: system-ui, sans-serif;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 90vh;
+      background: linear-gradient(180deg, rgba(15,18,22,1) 0%, rgba(21,26,33,1) 100%);
+      padding: 2rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin: 0;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      color: #9fb0c3;
+      max-width: 600px;
+      margin: 1rem auto;
+      font-size: 1.1rem;
+    }
+
+    .hero .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      padding: 0.9rem 1.6rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid var(--border, #2a3441);
+      background: var(--accent, #3b82f6);
+      color: #fff;
+      text-decoration: none;
+      transition: background 0.25s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: #e7ecf3;
+    }
+
+    .hero img {
+      margin-top: 2.5rem;
+      width: 220px;
+      max-width: 60%;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    }
+  </style>
+</head>
+
+<body>
+  <section class="hero">
+    <h1>Design Meets Intelligence</h1>
+    <p>
+      Exploring the intersection of creativity, AI, and human-centered design —
+      where technology amplifies imagination and innovation.
+    </p>
+
+    <div class="actions">
+      <a href="#" class="btn primary">Explore Projects</a>
+      <a href="#" class="btn ghost">Learn More</a>
+    </div>
+
+    <img src="https://source.unsplash.com/random/800x500?technology" alt="Hero illustration">
+  </section>
+
+  <!-- Optional JS from your live site -->
+  <script src="https://danielatorresalmeida.github.io/resume-site/assets/main.js"></script>
+</body>
+</html>

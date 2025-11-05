@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Testimonial Component</title>
+
+  <!-- Import live CSS from both websites -->
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site/assets/styles.css">
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site-only/assets/styles.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      background: #0f1216;
+      color: #e7ecf3;
+      font-family: system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      font-size: 1rem;
+      color: #9fb0c3;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    .testimonial {
+      background: var(--panel, #151a21);
+      border: 1px solid var(--border, #2a3441);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .testimonial:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    .avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent, #3b82f6);
+      margin-bottom: 1rem;
+    }
+
+    .quote {
+      font-style: italic;
+      color: #c4c8d1;
+      line-height: 1.5;
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+    }
+
+    .name {
+      font-weight: 600;
+      color: #fff;
+      font-size: 0.95rem;
+    }
+
+    .role {
+      color: #9fb0c3;
+      font-size: 0.8rem;
+      margin-top: 0.2rem;
+    }
+
+    /* Optional quote mark style */
+    .quote::before, .quote::after {
+      content: '"';
+      color: var(--accent, #3b82f6);
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Testimonial Component</h2>
+
+  <div class="testimonials">
+    <div class="testimonial">
+      <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client 1" class="avatar" />
+      <p class="quote">
+        Working with Daniel was a fantastic experience — he translated our brand vision into an interface that feels both elegant and intuitive.
+      </p>
+      <div class="name">Lyla Zhang</div>
+      <div class="role">Product Designer, Flo Labs</div>
+    </div>
+
+    <div class="testimonial">
+      <img src="https://randomuser.me/api/portraits/men/23.jpg" alt="Client 2" class="avatar" />
+      <p class="quote">
+        His attention to detail and ability to bridge design and code made our collaboration effortless. Highly recommended for modern web projects.
+      </p>
+      <div class="name">John Hazlewood</div>
+      <div class="role">CEO, Flomad Labs R&D</div>
+    </div>
+
+    <div class="testimonial">
+      <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client 3" class="avatar" />
+      <p class="quote">
+        The UI components Daniel built are flexible and easy to reuse — they’ve become a foundation for our current design system.
+      </p>
+      <div class="name">Alex Marino</div>
+      <div class="role">Frontend Engineer, Robotics Team</div>
+    </div>
+  </div>
+
+  <!-- Optional JS for site-wide behavior -->
+  <script src="https://danielatorresalmeida.github.io/resume-site/assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery Component</title>
+
+  <!-- Import live CSS from both websites -->
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site/assets/styles.css">
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site-only/assets/styles.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      background: #0f1216;
+      color: #e7ecf3;
+      font-family: system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      font-size: 1rem;
+      color: #9fb0c3;
+      margin-bottom: 1rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border, #2a3441);
+      background: var(--panel, #151a21);
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      opacity: 0.85;
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0.5rem 0.8rem;
+      font-size: 0.85rem;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover .caption {
+      opacity: 1;
+    }
+
+    @media (hover: none) {
+      .caption {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Gallery Component</h2>
+
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="https://source.unsplash.com/random/400x300?robotics" alt="Robotics project">
+      <div class="caption">Robotics Project</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://source.unsplash.com/random/400x300?design" alt="Design concept">
+      <div class="caption">UI/UX Design</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://source.unsplash.com/random/400x300?ai" alt="AI system">
+      <div class="caption">AI Visualization</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://source.unsplash.com/random/400x300?space" alt="Space exploration">
+      <div class="caption">Space Exploration</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://source.unsplash.com/random/400x300?coding" alt="Code interface">
+      <div class="caption">Coding Interface</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://source.unsplash.com/random/400x300?art" alt="Creative art">
+      <div class="caption">Creative Art</div>
+    </div>
+  </div>
+
+  <!-- Optional JS from your live site -->
+  <script src="https://danielatorresalmeida.github.io/resume-site/assets/main.js"></script>
+</body>
+</html>

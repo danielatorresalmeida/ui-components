@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Icon Set Component</title>
+
+  <!-- Import your live CSS -->
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site/assets/styles.css">
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site-only/assets/styles.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      background: #0f1216;
+      color: #e7ecf3;
+      font-family: system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      font-size: 1rem;
+      color: #9fb0c3;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+      gap: 1.5rem;
+      max-width: 800px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .icon-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--panel, #151a21);
+      border: 1px solid var(--border, #2a3441);
+      border-radius: 12px;
+      padding: 1rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .icon-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    }
+
+    .icon-box svg {
+      width: 30px;
+      height: 30px;
+      fill: #9fb0c3;
+      transition: fill 0.2s ease;
+    }
+
+    .icon-box:hover svg {
+      fill: var(--accent, #3b82f6);
+    }
+
+    .icon-label {
+      font-size: 0.8rem;
+      color: #c4c8d1;
+      user-select: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Icon Set</h2>
+
+  <div class="icon-grid">
+    <!-- GitHub -->
+    <div class="icon-box">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 .5C5.7.5.5 5.7.5 12.1c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 3 .8.1-.7.3-1.1.6-1.4-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.3.3.6.9.6 1.8v2.6c0 .3.2.7.8.6A10.9 10.9 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5z"/>
+      </svg>
+      <span class="icon-label">GitHub</span>
+    </div>
+
+    <!-- LinkedIn -->
+    <div class="icon-box">
+      <svg viewBox="0 0 24 24">
+        <path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.5 24V7.5h4.9V24H.5zM8.5 7.5H13v2.3h.1c.6-1.1 2.1-2.3 4.4-2.3 4.7 0 5.6 3.1 5.6 7.1V24h-4.9v-7.6c0-1.8 0-4-2.4-4s-2.8 1.9-2.8 3.9V24H8.5V7.5z"/>
+      </svg>
+      <span class="icon-label">LinkedIn</span>
+    </div>
+
+    <!-- Email -->
+    <div class="icon-box">
+      <svg viewBox="0 0 24 24">
+        <path d="M2 4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2zm0 2h20v.2L12 13 2 6.2V6zm0 2.3l10 6.3 10-6.3V18H2V8.3z"/>
+      </svg>
+      <span class="icon-label">Email</span>
+    </div>
+
+    <!-- JavaScript -->
+    <div class="icon-box">
+      <svg viewBox="0 0 24 24">
+        <path d="M1.5 0h21l-1.9 21.6-8.2 2.3-8.2-2.3L1.5 0zM12 21.1l6.6-1.8.2-2.7H12v-2.5h6.8l.2-2.5H12v-2.5h7l.2-2.6H12V2.5H5.8l1.4 15.8L12 21.1z"/>
+      </svg>
+      <span class="icon-label">JavaScript</span>
+    </div>
+
+    <!-- HTML -->
+    <div class="icon-box">
+      <svg viewBox="0 0 24 24">
+        <path d="M1.5 0h21l-1.9 21.6-8.2 2.3-8.2-2.3L1.5 0zM12 21.1l6.6-1.8.2-2.7H12v-2.5h6.8l.2-2.5H12v-2.5h7l.2-2.6H12V2.5H5.8l1.4 15.8L12 21.1z"/>
+      </svg>
+      <span class="icon-label">HTML</span>
+    </div>
+
+    <!-- CSS -->
+    <div class="icon-box">
+      <svg viewBox="0 0 24 24">
+        <path d="M1.5 0h21l-1.9 21.6-8.2 2.3-8.2-2.3L1.5 0zM12 21.1l6.6-1.8.2-2.7H12v-2.5h6.8l.2-2.5H12v-2.5h7l.2-2.6H12V2.5H5.8l1.4 15.8L12 21.1z"/>
+      </svg>
+      <span class="icon-label">CSS</span>
+    </div>
+
+    <!-- Figma -->
+    <div class="icon-box">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 12c1.657 0 3-1.343 3-3S13.657 6 12 6s-3 1.343-3 3 1.343 3 3 3zm0-12C6.477 0 2 4.477 2 10v4a8 8 0 0 0 8 8v-8h4v8a8 8 0 0 0 8-8v-4C22 4.477 17.523 0 12 0z"/>
+      </svg>
+      <span class="icon-label">Figma</span>
+    </div>
+
+    <!-- VS Code -->
+    <div class="icon-box">
+      <svg viewBox="0 0 24 24">
+        <path d="M3.4 6.7L0 8.9v6.3l3.4 2.2L18 24l6-3.3V3.3L18 0 3.4 6.7zm13.8 10.5l-6.2-4.1 6.2-4.1v8.2zm-8.7-2.2l-2.7 1.8-1.9-1.2V8.4l1.9-1.2 2.7 1.8v6z"/>
+      </svg>
+      <span class="icon-label">VS Code</span>
+    </div>
+  </div>
+
+  <!-- Optional JS (for animation or effects) -->
+  <script src="https://danielatorresalmeida.github.io/resume-site/assets/main.js"></script>
+</body>
+</html>

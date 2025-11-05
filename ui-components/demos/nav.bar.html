@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Navbar Component</title>
+
+  <!-- Import live CSS from both sites -->
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site/assets/styles.css">
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site-only/assets/styles.css">
+
+  <style>
+    body {
+      margin: 0;
+      background: #0f1216;
+      color: #e7ecf3;
+      font-family: system-ui, sans-serif;
+    }
+
+    /* NAVBAR BASE */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background: var(--panel, #151a21);
+      border-bottom: 1px solid var(--border, #2a3441);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    .brand {
+      font-weight: 700;
+      color: #fff;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #c4c8d1;
+      font-weight: 500;
+      transition: color 0.2s ease, border-bottom 0.2s ease;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent, #3b82f6);
+    }
+
+    .nav-links a.active {
+      color: var(--accent, #3b82f6);
+      border-bottom: 2px solid var(--accent, #3b82f6);
+    }
+
+    /* MOBILE MENU */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+    }
+
+    .menu-toggle span {
+      width: 22px;
+      height: 2px;
+      background: #e7ecf3;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 64px;
+        right: 0;
+        background: var(--panel, #151a21);
+        flex-direction: column;
+        width: 200px;
+        padding: 1rem;
+        gap: 1rem;
+        border-left: 1px solid var(--border, #2a3441);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+      }
+
+      .nav-links.open {
+        transform: translateX(0);
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    main {
+      margin-top: 80px;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    main h1 {
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    main p {
+      color: #9fb0c3;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="#" class="brand">Daniel Torres Almeida</a>
+
+    <div class="menu-toggle" id="menuToggle">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#" class="active">Home</a>
+      <a href="#">Projects</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <h1>Navbar Component</h1>
+    <p>
+      This responsive navigation bar adapts seamlessly to your portfolio’s dark aesthetic.
+      It includes hover transitions, an active state highlight, and a collapsible mobile menu.
+    </p>
+  </main>
+
+  <!-- Optional site JS -->
+  <script src="https://danielatorresalmeida.github.io/resume-site/assets/main.js"></script>
+
+  <script>
+    const toggle = document.getElementById("menuToggle");
+    const nav = document.getElementById("navLinks");
+
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("open");
+    });
+  </script>
+</body>
+</html>

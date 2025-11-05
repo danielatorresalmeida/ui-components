@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resume Section Component</title>
+
+  <!-- Import live CSS from both your websites -->
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site/assets/styles.css">
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site-only/assets/styles.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      background: #0f1216;
+      color: #e7ecf3;
+      font-family: system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      font-size: 1rem;
+      color: #9fb0c3;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .resume {
+      width: 100%;
+      max-width: 900px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .section {
+      background: var(--panel, #151a21);
+      border: 1px solid var(--border, #2a3441);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    }
+
+    .section h3 {
+      color: #fff;
+      font-size: 1.1rem;
+      margin-top: 0;
+      border-bottom: 1px solid var(--border, #2a3441);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .item {
+      margin-bottom: 1rem;
+    }
+
+    .item h4 {
+      margin: 0;
+      color: #e7ecf3;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .item span {
+      display: block;
+      font-size: 0.8rem;
+      color: #9fb0c3;
+      margin-bottom: 0.25rem;
+    }
+
+    .item p {
+      color: #c4c8d1;
+      font-size: 0.85rem;
+      margin: 0.2rem 0 0;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 768px) {
+      .resume {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Resume Section</h2>
+
+  <div class="resume">
+    <div class="section">
+      <h3>Experience</h3>
+      <div class="item">
+        <h4>Front-End Developer</h4>
+        <span>Flomad Labs R&D — 2024–Present</span>
+        <p>Building interactive web interfaces and AI-driven dashboards for robotics and experiential learning platforms.</p>
+      </div>
+
+      <div class="item">
+        <h4>UI Designer</h4>
+        <span>Freelance — 2022–2024</span>
+        <p>Designed responsive portfolios and web apps using Figma, CSS, and JavaScript frameworks.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Education</h3>
+      <div class="item">
+        <h4>Bachelor of Computer Science</h4>
+        <span>University of Coimbra — 2020–2024</span>
+        <p>Specialized in front-end development, UI/UX design, and applied AI technologies.</p>
+      </div>
+
+      <div class="item">
+        <h4>Workshops & Certifications</h4>
+        <span>2023–2024</span>
+        <p>Completed advanced courses in React, UX prototyping, and data visualization for AI interfaces.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JS -->
+  <script src="https://danielatorresalmeida.github.io/resume-site/assets/main.js"></script>
+</body>
+</html>

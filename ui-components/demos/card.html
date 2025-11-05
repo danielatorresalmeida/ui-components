@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Card Component</title>
+
+  <!-- Import your live CSS (from both sites if needed) -->
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site/assets/styles.css">
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site-only/assets/styles.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      background: #0f1216;
+      color: #e7ecf3;
+      font-family: system-ui, sans-serif;
+    }
+
+    h2 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #9fb0c3;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--panel, #151a21);
+      border: 1px solid var(--border, #2a3441);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1rem;
+    }
+
+    .card-content h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.1rem;
+      color: #fff;
+    }
+
+    .card-content p {
+      font-size: 0.9rem;
+      color: #c4c8d1;
+      line-height: 1.4;
+    }
+
+    .card-content .btn {
+      margin-top: 0.8rem;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Project Cards</h2>
+
+  <div class="card-grid">
+    <article class="card">
+      <img src="https://source.unsplash.com/random/400x300?technology" alt="Tech project">
+      <div class="card-content">
+        <h3>AI Portfolio Analyzer</h3>
+        <p>An experimental tool that evaluates your portfolio’s readability and structure using NLP.</p>
+        <a href="#" class="btn primary">View Project</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="https://source.unsplash.com/random/400x300?robotics" alt="Robotics project">
+      <div class="card-content">
+        <h3>Robotics Motion Control</h3>
+        <p>Demonstration of cooperative robotic systems built with low-level JavaScript and sensors.</p>
+        <a href="#" class="btn outline">Read More</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="https://source.unsplash.com/random/400x300?design" alt="Design project">
+      <div class="card-content">
+        <h3>Design System</h3>
+        <p>Reusable component library developed for consistency across web and product design.</p>
+        <a href="#" class="btn ghost">Preview</a>
+      </div>
+    </article>
+  </div>
+
+  <!-- Optional site JS (if animations/interactions are used) -->
+  <script src="https://danielatorresalmeida.github.io/resume-site/assets/main.js"></script>
+</body>
+</html>

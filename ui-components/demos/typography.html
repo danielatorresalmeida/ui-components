@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Typography Component</title>
+
+  <!-- Import live CSS from both sites -->
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site/assets/styles.css">
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site-only/assets/styles.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      background: #0f1216;
+      color: #e7ecf3;
+      font-family: system-ui, sans-serif;
+      max-width: 900px;
+      margin-inline: auto;
+    }
+
+    h2 {
+      font-size: 1rem;
+      color: #9fb0c3;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border, #2a3441);
+      margin: 2rem 0;
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent, #3b82f6);
+      padding-left: 1rem;
+      font-style: italic;
+      color: #c4c8d1;
+      margin: 1rem 0;
+    }
+
+    code {
+      background: #1b222c;
+      color: #3b82f6;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    a {
+      color: var(--accent, #3b82f6);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #60a5fa;
+    }
+
+    ul, ol {
+      padding-left: 1.5rem;
+      color: #c4c8d1;
+    }
+
+    li {
+      margin: 0.4rem 0;
+    }
+
+    small {
+      color: #9fb0c3;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Typography System</h2>
+
+  <section>
+    <h1>Heading 1 — The Future of Design & Code</h1>
+    <h2>Heading 2 — Creativity in the Age of AI</h2>
+    <h3>Heading 3 — Human-Centered Experiences</h3>
+    <h4>Heading 4 — Design Systems & Components</h4>
+    <h5>Heading 5 — Typography Example</h5>
+    <h6>Heading 6 — Fine Detail</h6>
+  </section>
+
+  <section>
+    <p>
+      This is a sample paragraph of body text, showcasing line height, font weight, and color balance.
+      It demonstrates how <strong>bold</strong>, <em>italic</em>, and <a href="#">links</a> appear in
+      your typography system. Inline <code>code snippets</code> are styled for readability.
+    </p>
+
+    <p>
+      Typography in a design system defines rhythm and readability across every screen.
+      Consistency in font sizing, weights, and color is key to clear communication.
+    </p>
+
+    <blockquote>
+      “Design is intelligence made visible.” — Alina Wheeler
+    </blockquote>
+
+    <small>Small text for metadata or footnotes</small>
+  </section>
+
+  <hr />
+
+  <section>
+    <h3>Lists & Structure</h3>
+
+    <h4>Unordered List</h4>
+    <ul>
+      <li>Human-centered design principles</li>
+      <li>Accessible color contrast and spacing</li>
+      <li>Reusable component patterns</li>
+    </ul>
+
+    <h4>Ordered List</h4>
+    <ol>
+      <li>Define visual hierarchy</li>
+      <li>Establish type scale</li>
+      <li>Maintain consistency</li>
+    </ol>
+  </section>
+
+  <hr />
+
+  <section>
+    <h3>Text Samples</h3>
+    <p><strong>Bold:</strong> Highlights important text for emphasis.</p>
+    <p><em>Italic:</em> Adds nuance or tone to phrases.</p>
+    <p><u>Underlined:</u> Indicates interactivity or specific reference.</p>
+    <p><del>Deleted text</del> and <ins>inserted text</ins> examples.</p>
+    <p><mark>Highlighted text</mark> for emphasis or annotation.</p>
+  </section>
+
+  <!-- Optional JS -->
+  <script src="https://danielatorresalmeida.github.io/resume-site/assets/main.js"></script>
+</body>
+</html>

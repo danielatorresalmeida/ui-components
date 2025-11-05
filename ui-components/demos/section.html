@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Section Component</title>
+
+  <!-- Import live CSS from both websites -->
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site/assets/styles.css">
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site-only/assets/styles.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      background: #0f1216;
+      color: #e7ecf3;
+      font-family: system-ui, sans-serif;
+    }
+
+    h2 {
+      font-size: 1rem;
+      color: #9fb0c3;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--panel, #151a21);
+      border: 1px solid var(--border, #2a3441);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    }
+
+    section h3 {
+      color: #fff;
+      font-size: 1.3rem;
+      margin-top: 0;
+    }
+
+    section p {
+      color: #c4c8d1;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .feature {
+      background: #1b222c;
+      border: 1px solid var(--border, #2a3441);
+      border-radius: 10px;
+      padding: 1rem;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .feature h4 {
+      margin: 0 0 0.4rem;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .feature p {
+      color: #9fb0c3;
+      font-size: 0.85rem;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Section Component</h2>
+
+  <section>
+    <h3>Our Mission</h3>
+    <p>
+      We aim to connect creativity and technology by designing intuitive digital experiences that
+      make innovation accessible to everyone. Through collaboration, design, and research, we
+      transform ideas into functional, beautiful realities.
+    </p>
+
+    <div class="features">
+      <div class="feature">
+        <h4>Human-Centered Design</h4>
+        <p>Every product starts with empathy — understanding users and creating with intention.</p>
+      </div>
+
+      <div class="feature">
+        <h4>Innovation by Experimentation</h4>
+        <p>We explore new technologies through prototyping and rapid iteration.</p>
+      </div>
+
+      <div class="feature">
+        <h4>Seamless Integration</h4>
+        <p>Design and engineering work together to deliver unified, efficient systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Optional JS -->
+  <script src="https://danielatorresalmeida.github.io/resume-site/assets/main.js"></script>
+</body>
+</html>

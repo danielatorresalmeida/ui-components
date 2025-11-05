@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grid Layout Component</title>
+
+  <!-- Import your live CSS from both websites -->
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site/assets/styles.css">
+  <link rel="stylesheet" href="https://danielatorresalmeida.github.io/resume-site-only/assets/styles.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      background: #0f1216;
+      color: #e7ecf3;
+      font-family: system-ui, sans-serif;
+    }
+
+    h2 {
+      font-size: 1rem;
+      color: #9fb0c3;
+      margin-bottom: 1rem;
+    }
+
+    /* Base grid */
+    .grid-demo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .grid-item {
+      background: var(--panel, #151a21);
+      border: 1px solid var(--border, #2a3441);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.95rem;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .grid-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .grid-item strong {
+      display: block;
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+
+    .subgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .subgrid div {
+      background: #1c212a;
+      border-radius: 6px;
+      padding: 0.5rem;
+      font-size: 0.85rem;
+      color: #9fb0c3;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Grid Layout System</h2>
+
+  <div class="grid-demo">
+    <div class="grid-item">
+      <strong>1. Single Card</strong>
+      A standalone content block inside the grid.
+    </div>
+
+    <div class="grid-item">
+      <strong>2. Info Section</strong>
+      Responsive grid adapts to viewport width.
+      <div class="subgrid">
+        <div>Left</div>
+        <div>Right</div>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <strong>3. Image & Text</strong>
+      <img src="https://source.unsplash.com/random/400x300?design" alt="Design" style="width:100%;border-radius:8px;margin-top:0.5rem;">
+    </div>
+
+    <div class="grid-item">
+      <strong>4. Stats Block</strong>
+      <div class="subgrid">
+        <div>Views: 4.3K</div>
+        <div>Likes: 1.2K</div>
+        <div>Comments: 57</div>
+        <div>Shares: 89</div>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <strong>5. Nested Grid</strong>
+      <div class="subgrid">
+        <div>A1</div>
+        <div>A2</div>
+        <div>A3</div>
+        <div>A4</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JS for dynamic features -->
+  <script src="https://danielatorresalmeida.github.io/resume-site/assets/main.js"></script>
+</body>
+</html>
