@@ -3,66 +3,43 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Daniela UI Components Library</title>
-  <meta name="description" content="Reusable UI components designed by Daniela Torres Almeida." />
-  <link rel="stylesheet" href="styles.css" />
+  <title>UI Components Showcase</title>
+  <link rel="stylesheet" href="assets/showcase.css" />
 </head>
 <body>
-  <header class="topbar">
-    <h1>Daniela UI Components Library</h1>
-    <button id="theme-toggle" class="btn ghost">🌞 Light</button>
+  <header class="page-header">
+    <h1>UI Components Showcase</h1>
+    <p>Live components reused across my sites. Styled by the real CSS from:
+      <a href="https://danielatorresalmeida.github.io/resume-site" target="_blank">resume-site</a>
+      and
+      <a href="https://danielatorresalmeida.github.io/resume-site-only" target="_blank">resume-site-only</a>.
+    </p>
+
+    <div class="tools">
+      <input id="search" type="search" placeholder="Search components…" autocomplete="off" />
+      <div class="topics">
+        <span class="topic">HTML</span>
+        <span class="topic">CSS</span>
+        <span class="topic">JavaScript</span>
+      </div>
+    </div>
   </header>
 
-  <main class="container">
-    <section id="colors">
-      <h2>🎨 Color Palette</h2>
-      <div class="palette">
-        <div class="swatch primary">--accent</div>
-        <div class="swatch bg">--bg</div>
-        <div class="swatch panel">--panel</div>
-        <div class="swatch text">--text</div>
+  <main id="grid" class="grid" aria-live="polite"></main>
+
+  <template id="card-tpl">
+    <article class="card">
+      <div class="card-head">
+        <h2 class="title"></h2>
+        <div class="actions">
+          <a class="btn open" target="_blank">Open demo</a>
+          <button class="btn ghost copy">Copy HTML</button>
+          <a class="btn ghost src" target="_blank" title="View source">Source</a>
+        </div>
       </div>
-    </section>
-
-    <section id="buttons">
-      <h2>🔘 Buttons</h2>
-      <div class="demo">
-        <button class="btn">Primary</button>
-        <button class="btn ghost">Ghost</button>
-        <button class="btn secondary">Secondary</button>
-        <button class="btn icon">⭐ Icon</button>
-      </div>
-    </section>
-
-    <section id="forms">
-      <h2>✏️ Forms</h2>
-      <form class="demo form">
-        <input type="text" placeholder="Name" />
-        <input type="email" placeholder="Email" />
-        <textarea placeholder="Message"></textarea>
-        <button class="btn">Submit</button>
-      </form>
-    </section>
-
-    <section id="cards">
-      <h2>🧩 Cards</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Default Card</h3>
-          <p>This is a reusable card component with text and border styles.</p>
-          <button class="btn ghost">Action</button>
-        </article>
-        <article class="card highlight">
-          <h3>Highlighted Card</h3>
-          <p>Used to draw attention — border uses accent color.</p>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p>© <span id="year"></span> Daniela Torres Almeida</p>
-  </footer>
+      <iframe class="preview" loading="lazy"></iframe>
+    </article>
+  </template>
 
   <script src="script.js" defer></script>
 </body>
