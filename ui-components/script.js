@@ -1,17 +1,23 @@
 /* ---------- Manifest: add/adjust items here ---------- */
 const COMPONENTS = [
-  // From resume-site
-  { name: "Navbar", file: "nav.bar.html", tags: ["layout", "navigation", "resume-site"] },
-  { name: "Button", file: "button.html", tags: ["controls", "resume-site"] },
-  { name: "Card", file: "card.html", tags: ["content", "resume-site"] },
-
-  // Suggested extras—create files under /demos when ready
-  { name: "Footer", file: "footer.html", tags: ["layout", "resume-site-only"], optional: true },
-  { name: "Hero", file: "hero.html", tags: ["section", "resume-site-only"], optional: true },
-  { name: "Project Card", file: "project-card.html", tags: ["content", "resume-site"], optional: true },
-  { name: "Contact Form", file: "contact.html", tags: ["forms", "resume-site"], optional: true },
-  { name: "Timeline", file: "timeline.html", tags: ["content", "resume-site-only"], optional: true },
-  { name: "Gallery", file: "gallery.html", tags: ["media", "resume-site-only"], optional: true },
+  {name:'Button', file:'components/button.html', tags:['controls','ui']},
+  {name:'Card', file:'components/card.html', tags:['layout','content']},
+  {name:'Contact', file:'components/contact.html', tags:['forms','section']},
+  {name:'Footer', file:'components/footer.html', tags:['layout']},
+  {name:'Form', file:'components/form.html', tags:['forms','inputs']},
+  {name:'Gallery', file:'components/gallery.html', tags:['media','grid']},
+  {name:'Grid', file:'components/grid.html', tags:['layout','utility']},
+  {name:'Hero', file:'components/hero.html', tags:['section','landing']},
+  {name:'Icon Set', file:'components/iconset.html', tags:['icons','assets']},
+  {name:'Modal', file:'components/modal.html', tags:['overlay','dialog']},
+  {name:'Navbar', file:'components/nav.bar.html', tags:['navigation','header']},
+  {name:'Project Card', file:'components/project-card.html', tags:['cards','projects']},
+  {name:'Resume', file:'components/resume.html', tags:['section','cv']},
+  {name:'Section', file:'components/section.html', tags:['content','layout']},
+  {name:'Sidebar', file:'components/sidebar.html', tags:['navigation','layout']},
+  {name:'Testimonial', file:'components/testimonial.html', tags:['content','social-proof']},
+  {name:'Timeline', file:'components/timeline.html', tags:['content','chronology']},
+  {name:'Typography', file:'components/typography.html', tags:['type','styleguide']},
 ];
 
 /* ---------- Utilities ---------- */
